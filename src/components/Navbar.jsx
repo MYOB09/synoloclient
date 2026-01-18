@@ -4,7 +4,7 @@ export default function Navbar() {
             <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
                 <div className="flex items-center gap-2 hover:cursor-pointer hover:opacity-80 transition">
                     <div>
-                        <img src="/Synolon-img.png" className="w-24 h-12" />
+                        <img src="Synolon-img.png" className="w-24 h-12" />
                     </div>
                     <p className="font-bold text-xl tracking-wide">
                         <span className="text-sky-300">Συν-</span><span className="text-orange-300">όλον</span>

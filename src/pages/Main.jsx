@@ -109,7 +109,7 @@ export default function Main() {
                 <div className="w-full flex flex-col md:flex-row items-center gap-10 md:gap-16">
                     <div className="w-full md:w-1/2">
                         <img
-                            src="/mainCenterImage.png"
+                            src="mainCenterImage.png"
                             alt="Παιδιά στο κέντρο Συν-όλον"
                             className="w-full h-auto object-cover rounded-3xl shadow-xl hover:scale-[1.02] transition-transform duration-300" />
                     </div>
@@ -141,14 +141,14 @@ export default function Main() {
                             <div className="bg-sky-50 p-4 rounded-full mb-4">
                                 <img
                                     className="w-10 h-10"
-                                    src="/speech-therapist.svg" />
+                                    src="speech-therapist.svg" />
                             </div>
                             <h4 className="text-xl font-semibold text-gray-800 mb-2">Λογοθεραπεία</h4>
                             <span className="text-gray-600 text-sm leading-relaxed">Βοηθάμε το παιδί να βρει τη φωνή του.</span>
                         </div>
                         <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 flex flex-col items-center text-center">
                             <div className="bg-orange-50 p-4 rounded-full mb-4">
-                                <img className="w-10 h-10" src="/physiotherapist.svg" alt="Εργοθεραπεία" />
+                                <img className="w-10 h-10" src="physiotherapist.svg" alt="Εργοθεραπεία" />
                             </div>
                             <h4 className="text-xl font-semibold text-gray-800 mb-2">Εργοθεραπεία</h4>
                             <span className="text-gray-600 text-sm leading-relaxed">
@@ -157,7 +157,7 @@ export default function Main() {
                         </div>
                         <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 flex flex-col items-center text-center">
                             <div className="bg-purple-50 p-4 rounded-full mb-4">
-                                <img className="w-10 h-10" src="/puzzle.svg" alt="Ειδική Διαπαιδαγώγηση" />
+                                <img className="w-10 h-10" src="puzzle.svg" alt="Ειδική Διαπαιδαγώγηση" />
                             </div>
                             <h4 className="text-xl font-semibold text-gray-800 mb-2">Ειδική Αγωγή</h4>
                             <span className="text-gray-600 text-sm leading-relaxed">
@@ -166,7 +166,7 @@ export default function Main() {
                         </div>
                         <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 flex flex-col items-center text-center">
                             <div className="bg-green-50 p-4 rounded-full mb-4">
-                                <img className="w-10 h-10" src="/guide.svg" alt="Συμβουλευτική" />
+                                <img className="w-10 h-10" src="guide.svg" alt="Συμβουλευτική" />
                             </div>
                             <h4 className="text-xl font-semibold text-gray-800 mb-2">Συμβουλευτική</h4>
                             <span className="text-gray-600 text-sm leading-relaxed">
