@@ -131,6 +131,7 @@ export default function Main() {
                         </div>
                     </div>
                 </div>
+
                 {/* ===YPHRESIES */}
                 <div className="mt-20 mb-12 px-4">
                     <h2 className="text-3xl md:text-4xl font-bold text-center text-sky-400 mb-12">
@@ -175,53 +176,104 @@ export default function Main() {
                         </div>
                     </div>
                 </div>
-                {/* H OMADA MAS */}
-                <div className="py-16 px-4 bg-gray-50"> {/* Απαλό φόντο για να ξεχωρίζει η ενότητα */}
-                    <div className="max-w-5xl mx-auto">
+                <div className="py-20 bg-white relative overflow-hidden">
+                    {/* Διακριτικό background pattern */}
+                    <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
 
-                        {/* Τίτλος Ενότητας */}
-                        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16">
-                            Γνωρίστε την <span className="text-orange-400">Ομάδα</span> μας
+                    <div className="max-w-5xl mx-auto px-6 relative z-10">
+
+                        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+                            Τι σημαίνει <span className="text-sky-500">Συν</span>-<span className="text-orange-400">όλον</span>;
                         </h2>
-                        <div className="space-y-20">
-                            {teamMembers.map((member, index) => (
-                                <div
-                                    key={index}
-                                    className={` flex flex-col md:flex-row items-center gap-8 md:gap-16 ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
-                                >
-                                    <div className="w-full md:w-1/3 flex justify-center">
-                                        <div className="relative">
-                                            <div className={`absolute inset-0 translate-x-3 translate-y-3 rounded-2xl bg-gray-200 -z-10`}></div>
-                                            <img
-                                                src={member.image}
-                                                alt={member.name}
-                                                className="w-64 h-64 object-cover rounded-2xl shadow-lg"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="w-full md:w-2/3 text-center md:text-left">
-                                        <h3 className="text-2xl font-bold text-gray-800 mb-1">{member.name}</h3>
-                                        <p className={`text-sm font-semibold uppercase tracking-wide mb-4 ${member.color}`}>
-                                            {member.role}
-                                        </p>
-                                        <p className="text-gray-600 leading-relaxed mb-6 text-lg">
-                                            {member.desc}
-                                        </p>
 
-                                        {/* Το Quote με στυλ */}
-                                        <div className="bg-white p-4 rounded-r-xl border-l-4 border-orange-300 shadow-sm inline-block">
-                                            <p className="italic text-gray-500 font-medium">
-                                                "{member.quote}"
-                                            </p>
-                                        </div>
-                                    </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+
+                            {/* Αριστερά: Το Όλον */}
+                            <div className="bg-sky-50 p-8 rounded-3xl border border-sky-100 text-center hover:shadow-lg transition-shadow duration-300">
+                                <div className="h-14 mb-4 flex w-full justify-center">
+                                    <img src="jigsaw.svg" />
                                 </div>
-                            ))}
+                                <h3 className="text-2xl font-bold text-gray-800 mb-3">
+                                    Το <span className="text-sky-500">Όλον</span>
+                                </h3>
+                                <p className="text-gray-600 leading-relaxed">
+                                    Γιατί το παιδί είναι ένα υπέροχο σύνολο. Δεν εστιάζουμε μόνο στη δυσκολία, αλλά βλέπουμε την προσωπικότητα, το συναίσθημα και τις ικανότητές του <strong>ολιστικά</strong>.
+                                </p>
+                            </div>
 
+                            {/* Δεξιά: Το Συν */}
+                            <div className="bg-orange-50 p-8 rounded-3xl border border-orange-100 text-center hover:shadow-lg transition-shadow duration-300">
+                                <div className="h-14 mb-4 flex w-full justify-center">
+                                    <img src="handshake.svg" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-800 mb-3">
+                                    Το <span className="text-orange-400">Συν</span>
+                                </h3>
+                                <p className="text-gray-600 leading-relaxed">
+                                    Γιατί σε αυτό το ταξίδι προχωράμε <strong>Συν-εργατικά</strong>. Τίποτα δεν γίνεται μόνος του. Εμείς, εσείς και το παιδί, προχωράμε μαζί, χέρι-χέρι.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        {/* Κάτω: Το συμπέρασμα */}
+                        <div className="mt-12 text-center max-w-2xl mx-auto">
+                            <p className="text-xl md:text-2xl font-serif italic text-gray-500">
+                                "Ενώνουμε τα κομμάτια, χτίζουμε το αύριο."
+                            </p>
                         </div>
 
                     </div>
                 </div>
+                {/* H OMADA MAS */}
+                <section id="our-team" className="scroll-mt-24 w-full">
+                    <div className="py-16 px-4 bg-gray-50"> {/* Απαλό φόντο για να ξεχωρίζει η ενότητα */}
+                        <div className="max-w-5xl mx-auto">
+
+                            {/* Τίτλος Ενότητας */}
+                            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16">
+                                Γνωρίστε την <span className="text-orange-400">Ομάδα</span> μας
+                            </h2>
+                            <div className="space-y-20">
+                                {teamMembers.map((member, index) => (
+                                    <div
+                                        key={index}
+                                        className={` flex flex-col md:flex-row items-center gap-8 md:gap-16 ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
+                                    >
+                                        <div className="w-full md:w-1/3 flex justify-center">
+                                            <div className="relative">
+                                                <div className={`absolute inset-0 translate-x-3 translate-y-3 rounded-2xl bg-gray-200 -z-10`}></div>
+                                                <img
+                                                    src={member.image}
+                                                    alt={member.name}
+                                                    className="w-64 h-64 object-cover rounded-2xl shadow-lg"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="w-full md:w-2/3 text-center md:text-left">
+                                            <h3 className="text-2xl font-bold text-gray-800 mb-1">{member.name}</h3>
+                                            <p className={`text-sm font-semibold uppercase tracking-wide mb-4 ${member.color}`}>
+                                                {member.role}
+                                            </p>
+                                            <p className="text-gray-600 leading-relaxed mb-6 text-lg">
+                                                {member.desc}
+                                            </p>
+
+                                            {/* Το Quote με στυλ */}
+                                            <div className="bg-white p-4 rounded-r-xl border-l-4 border-orange-300 shadow-sm inline-block">
+                                                <p className="italic text-gray-500 font-medium">
+                                                    "{member.quote}"
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
                 {/* O XWROS MAS */}
                 <div className="py-20 bg-white">
                     <div className="max-w-6xl mx-auto px-4">
@@ -362,137 +414,139 @@ export default function Main() {
                     </div>
                 </div>
                 {/* EPIKOINWNIA SECTION */}
-                <div className="py-20 bg-sky-50 relative overflow-hidden">
-                    {/* Διακοσμητικοί κύκλοι στο φόντο */}
-                    <div className="absolute top-0 left-0 w-64 h-64 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 -translate-x-1/2 -translate-y-1/2"></div>
-                    <div className="absolute bottom-0 right-0 w-64 h-64 bg-sky-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 translate-x-1/2 translate-y-1/2"></div>
+                <section id="contact-us" className="scroll-mt-24 w-full">
+                    <div className="py-20 bg-sky-50 relative overflow-hidden">
+                        {/* Διακοσμητικοί κύκλοι στο φόντο */}
+                        <div className="absolute top-0 left-0 w-64 h-64 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 -translate-x-1/2 -translate-y-1/2"></div>
+                        <div className="absolute bottom-0 right-0 w-64 h-64 bg-sky-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 translate-x-1/2 translate-y-1/2"></div>
 
-                    <div className="max-w-6xl mx-auto px-6 relative z-10">
+                        <div className="max-w-6xl mx-auto px-6 relative z-10">
 
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                                Ελάτε να <span className="text-sky-400">μιλήσουμε</span>
-                            </h2>
-                            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-                                Η πρώτη αξιολόγηση είναι το πρώτο βήμα. Επικοινωνήστε μαζί μας για να λύσουμε κάθε απορία σας.
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-
-                            {/* ΑΡΙΣΤΕΡΑ: Πληροφορίες & Χάρτης */}
-                            <div className="space-y-8">
-                                {/* Κάρτες Πληροφοριών */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="bg-white p-6 rounded-2xl shadow-sm border border-sky-100 flex flex-col items-center text-center gap-3">
-                                        <div className="bg-sky-100 p-3 rounded-full text-sky-600">
-                                            <Phone size={24} />
-                                        </div>
-                                        <h4 className="font-semibold text-gray-800">Τηλέφωνο</h4>
-                                        <p className="text-gray-600">210 1234567</p>
-                                    </div>
-
-                                    <div className="bg-white p-6 rounded-2xl shadow-sm border border-orange-100 flex flex-col items-center text-center gap-3">
-                                        <div className="bg-orange-100 p-3 rounded-full text-orange-600">
-                                            <Mail size={24} />
-                                        </div>
-                                        <h4 className="font-semibold text-gray-800">Email</h4>
-                                        <p className="text-gray-600">info@synolon.gr</p>
-                                    </div>
-                                </div>
-
-                                {/* Ωράριο & Διεύθυνση */}
-                                <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 space-y-6">
-                                    <div className="flex items-start gap-4">
-                                        <MapPin className="text-orange-400 mt-1 flex-shrink-0" />
-                                        <div>
-                                            <h4 className="font-semibold text-gray-800 mb-1">Διεύθυνση</h4>
-                                            <p className="text-gray-600">Λεωφόρος Ειρήνης 45, Νέα Σμύρνη, 17121</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <Clock className="text-sky-400 mt-1 flex-shrink-0" />
-                                        <div>
-                                            <h4 className="font-semibold text-gray-800 mb-1">Ωράριο Λειτουργίας</h4>
-                                            <p className="text-gray-600 text-sm">Δευτέρα - Παρασκευή: 13:00 - 21:00</p>
-                                            <p className="text-gray-600 text-sm">Σάββατο: 09:00 - 14:00</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Google Maps (Placeholder) */}
-                                <div className="w-full h-64 rounded-2xl overflow-hidden shadow-md border-4 border-white">
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3146.4947938379!2d23.7136!3d37.9422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDU2JzMyLjAiTiAyM8KwNDInNDkuMCJF!5e0!3m2!1sen!2sgr!4v1600000000000!5m2!1sen!2sgr"
-                                        width="100%"
-                                        height="100%"
-                                        style={{ border: 0 }}
-                                        allowFullScreen=""
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                        title="Google Maps"
-                                    ></iframe>
-                                </div>
+                            <div className="text-center mb-16">
+                                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                                    Ελάτε να <span className="text-sky-400">μιλήσουμε</span>
+                                </h2>
+                                <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+                                    Η πρώτη αξιολόγηση είναι το πρώτο βήμα. Επικοινωνήστε μαζί μας για να λύσουμε κάθε απορία σας.
+                                </p>
                             </div>
 
-                            {/* ΔΕΞΙΑ: Φόρμα Επικοινωνίας */}
-                            <div className="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-gray-100">
-                                <h3 className="text-2xl font-bold text-gray-800 mb-6">Στείλτε μας μήνυμα</h3>
-                                <form className="space-y-6">
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">Ονοματεπώνυμο Γονέα</label>
-                                        <input
-                                            type="text"
-                                            className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-sky-300 focus:ring-2 focus:ring-sky-100 outline-none transition"
-                                            placeholder="π.χ. Μαρία Παπαδοπούλου"
-                                        />
-                                    </div>
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
+                                {/* ΑΡΙΣΤΕΡΑ: Πληροφορίες & Χάρτης */}
+                                <div className="space-y-8">
+                                    {/* Κάρτες Πληροφοριών */}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div>
-                                            <label className="block text-sm font-medium text-gray-700 mb-2">Τηλέφωνο</label>
-                                            <input
-                                                type="tel"
-                                                className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-sky-300 focus:ring-2 focus:ring-sky-100 outline-none transition"
-                                                placeholder="69..."
-                                            />
+                                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-sky-100 flex flex-col items-center text-center gap-3">
+                                            <div className="bg-sky-100 p-3 rounded-full text-sky-600">
+                                                <Phone size={24} />
+                                            </div>
+                                            <h4 className="font-semibold text-gray-800">Τηλέφωνο</h4>
+                                            <p className="text-gray-600">210 1234567</p>
                                         </div>
-                                        <div>
-                                            <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                                            <input
-                                                type="email"
-                                                className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-sky-300 focus:ring-2 focus:ring-sky-100 outline-none transition"
-                                                placeholder="email@example.com"
-                                            />
+
+                                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-orange-100 flex flex-col items-center text-center gap-3">
+                                            <div className="bg-orange-100 p-3 rounded-full text-orange-600">
+                                                <Mail size={24} />
+                                            </div>
+                                            <h4 className="font-semibold text-gray-800">Email</h4>
+                                            <p className="text-gray-600">info@synolon.gr</p>
                                         </div>
                                     </div>
 
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">Το μήνυμά σας</label>
-                                        <textarea
-                                            rows="4"
-                                            className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-sky-300 focus:ring-2 focus:ring-sky-100 outline-none transition resize-none"
-                                            placeholder="Πείτε μας λίγα λόγια για το παιδί ή την υπηρεσία που σας ενδιαφέρει..."
-                                        ></textarea>
+                                    {/* Ωράριο & Διεύθυνση */}
+                                    <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 space-y-6">
+                                        <div className="flex items-start gap-4">
+                                            <MapPin className="text-orange-400 mt-1 flex-shrink-0" />
+                                            <div>
+                                                <h4 className="font-semibold text-gray-800 mb-1">Διεύθυνση</h4>
+                                                <p className="text-gray-600">Λεωφόρος Ειρήνης 45, Νέα Σμύρνη, 17121</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-start gap-4">
+                                            <Clock className="text-sky-400 mt-1 flex-shrink-0" />
+                                            <div>
+                                                <h4 className="font-semibold text-gray-800 mb-1">Ωράριο Λειτουργίας</h4>
+                                                <p className="text-gray-600 text-sm">Δευτέρα - Παρασκευή: 13:00 - 21:00</p>
+                                                <p className="text-gray-600 text-sm">Σάββατο: 09:00 - 14:00</p>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <button className="w-full bg-orange-400 hover:bg-orange-500 text-white font-bold py-4 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
-                                        <Send size={20} />
-                                        Αποστολή Μηνύματος
-                                    </button>
+                                    {/* Google Maps (Placeholder) */}
+                                    <div className="w-full h-64 rounded-2xl overflow-hidden shadow-md border-4 border-white">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3146.4947938379!2d23.7136!3d37.9422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDU2JzMyLjAiTiAyM8KwNDInNDkuMCJF!5e0!3m2!1sen!2sgr!4v1600000000000!5m2!1sen!2sgr"
+                                            width="100%"
+                                            height="100%"
+                                            style={{ border: 0 }}
+                                            allowFullScreen=""
+                                            loading="lazy"
+                                            referrerPolicy="no-referrer-when-downgrade"
+                                            title="Google Maps"
+                                        ></iframe>
+                                    </div>
+                                </div>
 
-                                    <p className="text-xs text-center text-gray-500 mt-4">
-                                        * Τα στοιχεία σας είναι ασφαλή και θα χρησιμοποιηθούν μόνο για την επικοινωνία μας.
-                                    </p>
-                                </form>
+                                {/* ΔΕΞΙΑ: Φόρμα Επικοινωνίας */}
+                                <div className="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-gray-100">
+                                    <h3 className="text-2xl font-bold text-gray-800 mb-6">Στείλτε μας μήνυμα</h3>
+                                    <form className="space-y-6">
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-2">Ονοματεπώνυμο Γονέα</label>
+                                            <input
+                                                type="text"
+                                                className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-sky-300 focus:ring-2 focus:ring-sky-100 outline-none transition"
+                                                placeholder="π.χ. Μαρία Παπαδοπούλου"
+                                            />
+                                        </div>
+
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div>
+                                                <label className="block text-sm font-medium text-gray-700 mb-2">Τηλέφωνο</label>
+                                                <input
+                                                    type="tel"
+                                                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-sky-300 focus:ring-2 focus:ring-sky-100 outline-none transition"
+                                                    placeholder="69..."
+                                                />
+                                            </div>
+                                            <div>
+                                                <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                                <input
+                                                    type="email"
+                                                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-sky-300 focus:ring-2 focus:ring-sky-100 outline-none transition"
+                                                    placeholder="email@example.com"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-2">Το μήνυμά σας</label>
+                                            <textarea
+                                                rows="4"
+                                                className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-sky-300 focus:ring-2 focus:ring-sky-100 outline-none transition resize-none"
+                                                placeholder="Πείτε μας λίγα λόγια για το παιδί ή την υπηρεσία που σας ενδιαφέρει..."
+                                            ></textarea>
+                                        </div>
+
+                                        <button className="w-full bg-orange-400 hover:bg-orange-500 text-white font-bold py-4 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                                            <Send size={20} />
+                                            Αποστολή Μηνύματος
+                                        </button>
+
+                                        <p className="text-xs text-center text-gray-500 mt-4">
+                                            * Τα στοιχεία σας είναι ασφαλή και θα χρησιμοποιηθούν μόνο για την επικοινωνία μας.
+                                        </p>
+                                    </form>
+                                </div>
+
                             </div>
-
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
             <Footer />
             <AccessibilityBtn />
-        </div>
+        </div >
     )
 }
