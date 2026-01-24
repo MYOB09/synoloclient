@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
 
@@ -38,17 +40,32 @@ export default function Navbar() {
         // { name: "Ομάδες Κοινωνικοποίησης" },
     ]
 
-    const handleNavigation = (targetId) => {
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const [isOpen, setIsOpen] = useState(false)
+    const scrollToSection = (id) => {
+        // If we are already on the homepage
         if (location.pathname === '/') {
-            // We are already on Home, just scroll
-            const element = document.getElementById(targetId);
+            const element = document.getElementById(id);
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
             }
         } else {
-            // We are on another page, go to Home with a hash
-            navigate(`/#${targetId}`);
+            // If we are on another page (e.g., /logotherapia)
+            navigate('/');
+
+            // Wait 100ms for the home page to render, then look for the element
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
         }
+
+        // Always close the mobile menu after clicking
+        setIsOpen(false);
     };
 
     return (
@@ -119,12 +136,79 @@ export default function Navbar() {
                         Επικοινωνία
                     </div>
                 </div>
-                <div className="md:hidden text-gray-500 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
+
+
+                <div className="md:hidden text-gray-500 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+                    {isOpen ? (
+                        <div className="h-6 w-6">
+                            <X />
+                        </div>
+                    ) : (
+                        // Burger Icon
+                        <div className="h-6 w-6">
+                            <Menu />
+                        </div>
+                    )}
                 </div>
             </div>
+            {isOpen && (
+                <div className="md:hidden bg-white border-t border-gray-100 absolute top-16 right-0 w-2/3 shadow-lg h-screen overflow-y-auto pb-20">
+                    <div className="flex flex-col px-4 pt-2 pb-4 space-y-1">
+
+                        {/* Services Section in Mobile */}
+                        <div className="py-2">
+                            <p className="font-bold text-gray-800 px-2 mb-2" onClick={() => scrollToSection("services")}>Υπηρεσίες</p>
+                            <div className="pl-4 border-l-2 border-sky-100 space-y-2">
+                                {services.map((service, index) => (
+                                    <Link
+                                        key={index}
+                                        to={service.ref}
+                                        onClick={() => setIsOpen(false)} // Close menu on click
+                                        className="block text-gray-600 hover:text-sky-500 py-1"
+                                    >
+                                        {service.name}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div
+                            className="block px-2 py-3 font-medium text-gray-700 hover:bg-gray-50 rounded-md cursor-pointer"
+                            onClick={() => scrollToSection("our-team")}
+                        >
+                            Ποιοι ειμαστε
+                        </div>
+
+                        <div className="block px-2 py-3 font-medium text-gray-700 hover:bg-gray-50 rounded-md cursor-pointer">
+                            Που βρισκόμαστε
+                        </div>
+
+                        {/* Games Section in Mobile */}
+                        <div className="py-2">
+                            <p className="font-bold text-gray-800 px-2 mb-2">Παιχνίδια</p>
+                            <div className="pl-4 border-l-2 border-sky-100 space-y-2">
+                                {games.map((game, index) => (
+                                    <Link
+                                        key={index}
+                                        to={game.ref}
+                                        onClick={() => setIsOpen(false)}
+                                        className="block text-gray-600 hover:text-sky-500 py-1"
+                                    >
+                                        {game.name}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div
+                            className="block px-2 py-3 font-medium text-gray-700 hover:bg-gray-50 rounded-md cursor-pointer"
+                            onClick={() => scrollToSection("contact-us")}
+                        >
+                            Επικοινωνία
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
