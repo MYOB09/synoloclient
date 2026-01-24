@@ -1,8 +1,9 @@
 import Navbar from "../components/Navbar"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ZoomIn, MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import Footer from "../components/Footer";
 import AccessibilityBtn from "../components/AccessibilityBtn";
+import { useLocation } from "react-router-dom";
 
 export default function Main() {
     const [selectedImage, setSelectedImage] = useState(null)
@@ -101,10 +102,23 @@ export default function Main() {
         }
     ];
 
+    useEffect(() => {
+        if (location.hash) {
+            const sectionId = location.hash.replace('#', '');
+            const element = document.getElementById(sectionId);
+            if (element) {
+                // We add a tiny delay to ensure the page is fully painted before scrolling
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+        }
+    }, [location]);
+
     return (
         <div>
-            <Navbar />
-            <div className=" max-w-6xl mx-auto px-6 py-12 md:py-20">
+            {/* <Navbar /> */}
+            <div className=" max-w-6xl mx-auto px-6 py-12 md:py-20 ">
                 {/* HERO SECTION */}
                 <div className="w-full flex flex-col md:flex-row items-center gap-10 md:gap-16">
                     <div className="w-full md:w-1/2">
@@ -133,7 +147,7 @@ export default function Main() {
                 </div>
 
                 {/* ===YPHRESIES */}
-                <div className="mt-20 mb-12 px-4">
+                <div id="services" className="mt-20 mb-12 px-4">
                     <h2 className="text-3xl md:text-4xl font-bold text-center text-sky-400 mb-12">
                         Υπηρεσίες
                     </h2>
